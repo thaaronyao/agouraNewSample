@@ -1,49 +1,55 @@
-import React from "react";
-import "../styles/Navbar.css"; // Adjust the path as necessary
-import LogoHome from "../assets/Images/logo_home.png";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
-import LoginIcon from "@mui/icons-material/Login";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
+import React from 'react';
+import LogoHome from '../assets/Images/logo_home.png';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import LoginIcon from '@mui/icons-material/Login';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { useNavigate } from 'react-router';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
   const menuItems = [
-    { label: "Home", icon: <HomeIcon fontSize="small" />, link: "/" },
+    { label: 'Home', icon: <HomeIcon fontSize="small" />, link: '/' },
     {
-      label: "About+",
+      label: 'About+',
       icon: <InfoIcon fontSize="small" />,
-      link: "/about",
+      link: '/about',
       submenu: [
-        { label: "Overview", link: "/about/overview" },
-        { label: "Math Circle", link: "/about/math-circle" },
-        { label: "Engineering Circle", link: "/about/engineering-circle" },
+        { label: 'Overview', link: '/about/overview' },
+        { label: 'Math Circle', link: '/about/math-circle' },
+        { label: 'Engineering Circle', link: '/about/engineering-circle' },
       ],
     },
     {
-      label: "Gallery",
+      label: 'Gallery',
       icon: <PhotoLibraryIcon fontSize="small" />,
-      link: "/gallery",
+      link: '/gallery',
     },
     {
-      label: "Resources",
+      label: 'Resources',
       icon: <MenuBookIcon fontSize="small" />,
-      link: "/resources",
+      link: '/resources',
     },
-    { label: "FAQ", icon: <HelpOutlineIcon fontSize="small" />, link: "/faq" },
+    { label: 'FAQ', icon: <HelpOutlineIcon fontSize="small" />, link: '/faq' },
     {
-      label: "Donate",
+      label: 'Donate',
       icon: <VolunteerActivismIcon fontSize="small" />,
-      link: "/donate",
+      link: '/donate',
     },
-    { label: "Login", icon: <LoginIcon fontSize="small" />, link: "/login" },
+    { label: 'Login', icon: <LoginIcon fontSize="small" />, link: '/login' },
     {
-      label: "Contact",
+      label: 'Contact',
       icon: <ContactMailIcon fontSize="small" />,
-      link: "/contact",
+      link: '/contact',
     },
   ];
 
@@ -54,15 +60,26 @@ const Navbar = () => {
       <ul className="navbar-nav">
         {menuItems.map(({ label, icon, link, submenu }) => (
           <li key={label} className="navbar-item">
-            <div className="navbar-link">
+            <div
+              className="navbar-link"
+              onClick={() => {
+                navigateTo(link);
+              }}
+            >
               {icon}
-              <a href={link}>{label}</a>
+              <span>{label}</span>
             </div>
             {submenu && (
               <ul className="submenu">
-                {submenu.map((sub) => (
-                  <li key={sub.label} className="submenu-item">
-                    <a href={sub.link}>{sub.label}</a>
+                {submenu.map(({ label, link }) => (
+                  <li
+                    key={label}
+                    className="submenu-item"
+                    onClick={() => {
+                      navigateTo(link);
+                    }}
+                  >
+                    <a>{label}</a>
                   </li>
                 ))}
               </ul>

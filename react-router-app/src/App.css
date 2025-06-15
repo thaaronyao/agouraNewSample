@@ -1,3 +1,7 @@
+@import 'styles/Home.css';
+@import 'styles/Navbar.css';
+@import 'styles/Topbar.css';
+
 .icon {
   font-size: 18px;
   color: #ffffff;

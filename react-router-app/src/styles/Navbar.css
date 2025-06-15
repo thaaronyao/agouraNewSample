@@ -1,5 +1,5 @@
 .navbar {
-  width: 100%;
+  /* width: 100%; */
   height: 12vh;
   background-color: #53b50a;
   display: flex;
@@ -33,6 +33,10 @@
   gap: 4px;
 }
 
+.navbar-link:hover {
+  cursor: pointer;
+}
+
 .navbar-item a {
   text-decoration: none;
   color: black;
@@ -54,6 +58,10 @@
 
 .submenu-item {
   padding: 5px 20px;
+}
+
+.submenu-item:hover {
+  cursor: pointer
 }
 
 .submenu-item a {

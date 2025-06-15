@@ -1,29 +1,36 @@
-import { createBrowserRouter } from "react-router";
-import App from "./App";
-import Home from "./components/Home";
+import { createBrowserRouter } from 'react-router';
+import App from './App';
+import Home from './components/Home';
+import About from './components/About';
+import Overview from './components/Overview';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
-        path: "home",
+        index: true,
         element: <Home />,
       },
       {
-        path: "home",
-        element: <Home />,
+        path: 'about',
+        element: <About />,
+        children: [
+          {
+            path: 'overview',
+            element: <Overview />,
+          },
+        ],
       },
+      // {
+      //   path: 'about/overview',
+      //   element: <Overview />,
+      // },
       {
-        path: "home",
-        element: <Home />,
+        path: 'mathcircle',
+        element: <About />,
       },
-      {
-        path: "home",
-        element: <Home />,
-      },
-      
     ],
   },
 ]);

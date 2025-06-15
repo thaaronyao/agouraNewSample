@@ -1,13 +1,11 @@
-import React from "react";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import "../styles/topbar.CSS"; // <-- Import the CSS
-import "../App.css";
-import { Login } from "@mui/icons-material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import React from 'react';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { Login } from '@mui/icons-material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Topbar = () => {
   return (
