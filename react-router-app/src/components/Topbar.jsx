@@ -6,8 +6,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useNavigate } from 'react-router';
 
 const Topbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="topbar">
       {/* Left - Program Links */}
@@ -23,6 +25,13 @@ const Topbar = () => {
         </li>
         <li>
           <a href="satellite-program.html">Satellite Program</a>
+        </li>
+        <li
+          onClick={() => {
+            navigate('/pStudyWare');
+          }}
+        >
+          <span style={{ color: 'white' }}>Fake Login: click me</span>
         </li>
       </ul>
 

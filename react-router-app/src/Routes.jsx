@@ -4,6 +4,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Overview from './components/Overview';
 
+import StudentApp from './StudentApp';
+
 const routes = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +34,11 @@ const routes = createBrowserRouter([
         element: <About />,
       },
     ],
+  },
+  {
+    path: 'pStudyWare',
+    authentication: true, // meta setup for usage later
+    element: <StudentApp />,
   },
 ]);
 
