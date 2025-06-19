@@ -5,6 +5,8 @@ import About from './components/About';
 import Overview from './components/Overview';
 
 import StudentPortal from './StudentPortal';
+import Login from './components/Login';
+import StudentRegistration from './components/StudentRegistration';
 
 const routes = createBrowserRouter([
   {
@@ -25,13 +27,17 @@ const routes = createBrowserRouter([
           },
         ],
       },
-      // {
-      //   path: 'about/overview',
-      //   element: <Overview />,
-      // },
       {
         path: 'mathcircle',
         element: <About />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'studentregistration',
+        element: <StudentRegistration />,
       },
     ],
   },
